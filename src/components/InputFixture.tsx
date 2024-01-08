@@ -93,7 +93,7 @@ const InputFixtures = () => {
                 onChangeText={(e: any) => setInputValue(e.target.value)}
               />
             </Box>
-            <Box px={'s'} borderRadius={14} py={'xs'}>
+            <Box px={'s'} bg={"pillsBg"} borderRadius={14} py={'xxs'}>
               <Text variant={'body_sm'} color={'textColor'}>
                 {moment().format('h:mma')}
               </Text>

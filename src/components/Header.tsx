@@ -20,7 +20,7 @@ export const Header = () => {
       flexDirection={'row'}
       justifyContent={'space-between'}
       alignItems={'center'}>
-      <Box>{darkMode ? <LogoDark /> : <LogoDark />}</Box>
+      <Box>{darkMode ? <LogoLight /> : <LogoDark />}</Box>
       <Box position={"relative"}>
         <Notification />
         <Box position={"absolute"} right={-2} top={-2} width={14} borderRadius={10} alignItems={"center"} justifyContent={"center"} height={14} bg={"primary"}>

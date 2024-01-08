@@ -147,7 +147,7 @@ const FlaotingTextInput: FC<Props> = ({
 
 const styles = StyleSheet.create({
   subContainer: {
-    marginBottom: 10,
+    // marginBottom: 10,
   },
   textStyle: {
     borderWidth: 0.5,

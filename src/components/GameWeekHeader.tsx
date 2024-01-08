@@ -9,7 +9,7 @@ type GameWeekHeaderProp  ={
 export const GameWeekHeader = ({title}:GameWeekHeaderProp) => {
 
   return (
-    <Box alignItems={'center'} my={"s"} >
+    <Box alignItems={'center'}  >
       <Text color={'textColor'} variant={'subtitle'} >
         {title}
 

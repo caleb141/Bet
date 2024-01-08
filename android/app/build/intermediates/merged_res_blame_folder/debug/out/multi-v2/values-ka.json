@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reactnativeapp-mergeDebugResources-36:/values-ka/values-ka.xml",
+            "outputFile": "com.reactnativeapp-mergeDebugResources-37:/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/transforms-3/dd33cdba76574cd6269c5bd29e434651/transformed/material-1.9.0/res/values-ka/values-ka.xml",

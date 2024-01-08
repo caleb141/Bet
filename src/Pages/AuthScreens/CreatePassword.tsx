@@ -27,6 +27,10 @@ import {usePreference} from '../../state/hooks/preference.hook';
 import {useTheme} from '@shopify/restyle';
 import {Theme} from '../../utils/theme';
 import {isEmpty, size} from 'lodash';
+import {useHeaderHeight} from '@react-navigation/elements';
+
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native';
 
 const ResetPasswordSchema = Yup.object().shape({
   password: Yup.string()
@@ -62,6 +66,9 @@ const CreatePassword = () => {
       screen: 'Success',
     });
   };
+
+  const headerHeight = useHeaderHeight();
+  const insets = useSafeAreaInsets();
   const formatPasswordError = async (password: string) => {
     ResetPasswordSchema.validate(
       {
@@ -76,7 +83,7 @@ const CreatePassword = () => {
   };
 
   return (
-    <Box py='l' px={'l'} flex={1} bg={'mainBg'} position="relative">
+    <Box py="l" px={'l'} flex={1} bg={'mainBg'} position="relative">
       <StatusBar backgroundColor="#2A52BE" barStyle={'light-content'} />
       <TouchableWithoutFeedback onPress={goBack}>
         <Box mr={'m'}>
@@ -84,132 +91,132 @@ const CreatePassword = () => {
         </Box>
       </TouchableWithoutFeedback>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={insets.top + headerHeight}
+        {...(Platform.OS === 'ios' && {behavior: 'padding'})}
+        // behavior="padding"
         style={{
           //   backgroundColor: 'red',
           flex: 1,
-          marginBottom: 45,
+          // marginBottom: 45,
         }}>
-        <Box mt='xl' flex={1} justifyContent={'flex-start'}>
-          <Formik
-            initialValues={{password: ''}}
-            validationSchema={ResetPasswordSchema}
-            onSubmit={values => onSubmit(values)}>
-            {({
-              
-              setFieldValue,
-              handleSubmit,
-              values,
-              errors,
-              touched,
-            }) => (
-              <Box>
-                <Text
-                  my={'xl'}
-                  color={'primary'}
-                  textAlign={'center'}
-                  variant={'h4'}>
-                  Create new password
-                </Text>
-                <Box my={'s'}>
-                  <FlaotingTextInput
-                    secure={secure}
-                    type="password"
-                    label="Password"
-                    value={values.password}
-                    hasError={!isEmpty(errors.password) && touched.password}
-                    togglePassword={() => setSecure(!secure)}
-                    placeholder="password"
-                    onChangeText={value => {
-                      formatPasswordError(value);
-                      setFieldValue('password', value);
-                    }}
+        <ScrollView
+          style={{flex: 1}}
+          contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}>
+          <Box mt="xl" flex={1} justifyContent={'flex-start'}>
+            <Formik
+              initialValues={{password: ''}}
+              validationSchema={ResetPasswordSchema}
+              onSubmit={values => onSubmit(values)}>
+              {({setFieldValue, handleSubmit, values, errors, touched}) => (
+                <Box>
+                  <Text
+                    mt={'xl'}
+                    mb="l"
+                    color={'primary'}
+                    textAlign={'center'}
+                    variant={'h4'}>
+                    Create new password
+                  </Text>
+                  <Box my={'s'}>
+                    <FlaotingTextInput
+                      secure={secure}
+                      type="password"
+                      label="Password"
+                      value={values.password}
+                      hasError={!isEmpty(errors.password) && touched.password}
+                      togglePassword={() => setSecure(!secure)}
+                      placeholder="password"
+                      onChangeText={value => {
+                        formatPasswordError(value);
+                        setFieldValue('password', value);
+                      }}
+                    />
+                    {errors.password && touched.password ? (
+                      <Text color="danger" variant={'body_sm'} my={'s'}>
+                        {errors.password}
+                      </Text>
+                    ) : null}
+                  </Box>
+
+                  <Box ml={'s'} display={'flex'} flexDir={'column'}>
+                    {size(Ierrors) > 1 ? (
+                      pErrors.map((item, index) => (
+                        <Box
+                          key={index}
+                          display={'flex'}
+                          flexDirection="row"
+                          justifyContent={'flex-start'}
+                          alignItems="center">
+                          {Ierrors.includes(item) ? (
+                            <Close name="close" size={15} color={`${danger}`} />
+                          ) : (
+                            <Check name="check" size={15} color={success} />
+                          )}
+                          <Text
+                            ml="s"
+                            color={
+                              Ierrors.includes(item)
+                                ? darkMode
+                                  ? 'faint'
+                                  : 'gray'
+                                : 'textColor'
+                            }>
+                            {item}
+                          </Text>
+                        </Box>
+                      ))
+                    ) : (
+                      <Box />
+                    )}
+                  </Box>
+
+                  <Button
+                    accessibilityLabel="button"
+                    bg="primary"
+                    onPress={handleSubmit}
+                    borderRadius={7}
+                    mt="m"
+                    py={'mm'}
+                    justifyContent={'center'}
+                    alignSelf={'center'}
+                    width={'100%'}
+                    label="Reset password"
                   />
-                  {errors.password && touched.password ? (
-                    <Text color="danger" variant={'body_sm'} my={'s'}>
-                      {errors.password}
-                    </Text>
-                  ) : null}
                 </Box>
-
-                <Box ml={'s'} display={'flex'} flexDir={'column'}>
-                  {size(Ierrors) > 1 ? (
-                    pErrors.map((item, index) => (
-                      <Box
-                        key={index}
-                        display={'flex'}
-                        flexDirection="row"
-                        justifyContent={'flex-start'}
-                        alignItems="center">
-                        {Ierrors.includes(item) ? (
-                          <Close name="close" size={15} color={`${danger}`} />
-                        ) : (
-                          <Check name="check" size={15} color={success} />
-                        )}
-                        <Text
-                          ml="s"
-                          color={
-                            Ierrors.includes(item)
-                              ? darkMode
-                                ? 'faint'
-                                : 'gray'
-                              : 'textColor'
-                          }>
-                          {item}
-                        </Text>
-                      </Box>
-                    ))
-                  ) : (
-                    <Box />
-                  )}
-                </Box>
-
-                <Button
-                  accessibilityLabel="button"
-                  bg="primary"
-                  onPress={handleSubmit}
-                  borderRadius={7}
-                  mt="s"
-                  py={'m'}
-                  justifyContent={'center'}
-                  alignSelf={'center'}
-                  width={'100%'}
-                  label="Reset password"
-                />
-              </Box>
-            )}
-          </Formik>
-        </Box>
-        <Box
-          width={'95%'}
-          alignItems={'flex-start'}
-          justifyContent={'flex-start'}
-          flexDirection={'row'}>
-          <Box mr={'s'}>
-            <MaterialIcon name="error-outline" size={20} color={textColor} />
+              )}
+            </Formik>
           </Box>
-          <Box>
-            <Text
-              lineHeight={{
-                phone: 24,
-                longPhone: 26,
-              }}
-              color={'textColor'}
-              fontSize={12}
-              variant={'body_sm'}>
-              Welcome to{' '}
-              <Text variant={'logo'} color={'textColor'}>
-                Peer
+          <Box
+            width={'95%'}
+            alignItems={'flex-start'}
+            justifyContent={'flex-start'}
+            flexDirection={'row'}>
+            <Box  mr={'s'}>
+              <MaterialIcon name="error-outline" size={18} color={textColor} />
+            </Box>
+            <Box>
+              <Text
+                lineHeight={{
+                  phone: 24,
+                  longPhone: 26,
+                }}
+                color={'textColor'}
+                fontSize={12}
+                variant={'body_sm'}>
+                Welcome to{' '}
+                <Text variant={'logo'} color={'textColor'}>
+                  Peer
+                </Text>
+                <Text variant={'logo'} color={'primary'}>
+                  Bet
+                </Text>
+                <Text variant={'body_sm'}>!</Text> Please note, this app is
+                intended for users aged 18 and above. By continuing, you confirm
+                that you meet the age requirement. Enjoy your experience!
               </Text>
-              <Text variant={'logo'} color={'primary'}>
-                Bet
-              </Text>
-              <Text variant={'body_sm'}>!</Text> Please note, this app is
-              intended for users aged 18 and above. By continuing, you confirm
-              that you meet the age requirement. Enjoy your experience!
-            </Text>
+            </Box>
           </Box>
-        </Box>
+        </ScrollView>
       </KeyboardAvoidingView>
     </Box>
   );

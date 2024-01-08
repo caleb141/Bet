@@ -31,7 +31,7 @@ const Fixtures = () => {
   return (
     <Box mt="s">
       <Box bg="fixtureBg" alignItems="center" borderRadius={10} py={'xs'}>
-        <Box bg={'pillsBg'} px={'l'} borderRadius={14} py={'xs'}>
+        <Box bg={'pillsBg'} px={'l'} borderRadius={14} py={'xxs'} mb="s">
           <Text variant={'body_sm'} color={'textColor'}>
             {moment().format('Do MMM, yyyy')}
           </Text>
@@ -80,7 +80,7 @@ const Fixtures = () => {
                 -{' '}
               </Text>
             </Box>
-            <Box bg={'pillsBg'} px={'s'} borderRadius={14} py={'xs'}>
+            <Box bg={'pillsBg'} px={'s'} mb={"xs"} borderRadius={14} py={'xxs'}>
               <Text variant={'body_sm'} color={'textColor'}>
                 {moment().format('h:mma')}
               </Text>

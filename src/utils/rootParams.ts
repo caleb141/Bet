@@ -1,3 +1,7 @@
+import { GameWeek } from "./../Pages/GameWeek";
+import { EditPredictions } from "./../Pages/EditPredictions";
+import { JoinGame } from "./../Pages/JoinGame";
+import { StakeConfirmed } from "./../Pages/StakeConfirmed";
 import { StakeGame } from "./../Pages/StakeGame";
 import { SuccessPage } from "./../Pages/SuccessPage";
 import {DrawerNavigationProp} from '@react-navigation/drawer';
@@ -50,7 +54,14 @@ export type MainStackParamList = {
   SuccessPage: undefined;
   CreateGame: undefined;
   StakeGame: undefined;
-
+  StakeConfirmed: undefined;
+  JoinGame: undefined;
+  GameLobby: undefined;
+  MyActiveGame: undefined;
+  EditPredictions: undefined;
+  EditProfile: undefined;
+  GameWeek: undefined;
+  PredictionSuccess: undefined;
 };
 
 export type MainScreenNavigationProp = StackNavigationProp<MainStackParamList>;

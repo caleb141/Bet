@@ -72,7 +72,7 @@ const AddBeneficiary: FC<Props> = ({isVisible, close}) => {
           borderRadius={7}
           mt="l"
           mx="m"
-          py={'m'}
+          py={'mm'}
           justifyContent={'center'}
           alignSelf={'flex-end'}
           width={'90%'}
@@ -100,7 +100,7 @@ export const Withdrawal = () => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
-  const {navigate} = useNavigation<MainScreenNavigationProp>();
+  const {navigate, goBack} = useNavigation<MainScreenNavigationProp>();
 
   return (
     <Box backgroundColor="mainBg" py={'l'} px={'m'} flex={1}>
@@ -115,7 +115,7 @@ export const Withdrawal = () => {
           flexDirection={'row'}
           position={'relative'}>
           <Box position={'absolute'} left={0}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goBack}>
               <FontAwesome6
                 size={20}
                 name="arrow-left-long"
@@ -145,7 +145,7 @@ export const Withdrawal = () => {
           alignItems={'flex-end'}>
           <Text
             variant={'h3'}
-            fontWeight={'700'}
+
             textAlign={'center'}
             color={'textColor'}>
             ₦
@@ -169,7 +169,8 @@ export const Withdrawal = () => {
           Available Balance
         </Text>
         <Box
-          py={'xxl'}
+          pt={'xxl'}
+          pb="xl"
           flexDirection={'row'}
           alignItems={'center'}
           justifyContent={'space-between'}>
@@ -194,23 +195,22 @@ export const Withdrawal = () => {
               <Text
                 color={'beneficiaryBtnText'}
                 variant={'body_md'}
+                px="xxs"
                 fontWeight={'700'}>
                 Add Beneficiary
               </Text>
             </Box>
           </TouchableOpacity>
         </Box>
-        <Box my="l" mx={'l'} width={'90%'} flexDirection={'row'}>
-          <Feather name="info" size={16} color={primary} />
-          <Box my="m" mx={'l'} width={'90%'} flexDirection={'row'}>
+
+          <Box my="m" mb="xxl"  flexDirection={'row'}>
             <Feather name="info" size={16} color={textColor} />
-            <Text variant={'body_md'} pl={'s'} color={'textColor'}>
+            <Text variant={'body_md'} ml={'s'} color={'textColor'}>
               You do not have any beneficiary to process withdrawal. Add
               beneficiary and confirm withdrawal.
             </Text>
           </Box>
-          <BeneficiaryList />
-        </Box>
+
 
         <TouchableOpacity onPress={() => navigate('SuccessPage')}>
           <Box

@@ -95,11 +95,11 @@ const Error = () => {
         <Box
           width={'95%'}
           mt="xl"
-          alignItems={'flex-start'}
+          alignItems={'center'}
           justifyContent={'flex-start'}
           flexDirection={'row'}>
           <Box mr={'s'}>
-            <MaterialIcon name="error-outline" size={20} color={textColor} />
+            <MaterialIcon name="error-outline" size={16} color={textColor} />
           </Box>
           <Box>
             <Text

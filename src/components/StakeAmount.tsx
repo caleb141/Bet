@@ -22,10 +22,9 @@ export const StakeAmount = () => {
           justifyContent={'center'}
           alignItems={'center'}>
           <Text
-            variant={'h5'}
+            variant={'h4'}
             color={'textColor'}
-            fontSize={26}
-            fontWeight={'500'}>
+          >
             ₦500
           </Text>
         </Box>
@@ -37,10 +36,9 @@ export const StakeAmount = () => {
           alignItems={'center'}
           px="l">
           <Text
-            variant={'h5'}
+            variant={'h4'}
             color={'textColor'}
-            fontSize={26}
-            fontWeight={'500'}>
+          >
             ₦1000
           </Text>
         </Box>
@@ -58,10 +56,10 @@ export const StakeAmount = () => {
           justifyContent={'center'}
           alignItems={'center'}>
           <Text
-            variant={'h5'}
+            variant={'h4'}
             color={'textColor'}
-            fontSize={26}
-            fontWeight={'500'}>
+
+           >
             ₦2,000
           </Text>
         </Box>
@@ -73,10 +71,9 @@ export const StakeAmount = () => {
           alignItems={'center'}
           px="l">
           <Text
-            variant={'h5'}
+            variant={'h4'}
             color={'textColor'}
-            fontSize={26}
-            fontWeight={'500'}>
+           >
             ₦5,000
           </Text>
         </Box>
@@ -94,10 +91,9 @@ export const StakeAmount = () => {
         mx={"xxl"}>
 
         <Text
-          variant={'h5'}
+          variant={'h4'}
           color={'textColor'}
-          fontSize={26}
-          fontWeight={'500'}>
+          >
           ₦
         </Text>
         <BottomInput value={stakeAmount} onChangeText={(e:any)=>setStakAmount(e.target.value)} />

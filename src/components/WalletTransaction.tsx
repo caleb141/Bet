@@ -189,7 +189,7 @@ export const WalletTransaction = () => {
                       value={from}
                       updateValue={(value: string) => setFrom(value)}
                     />
-                    <Text mx="m">and</Text>
+                    <Text color={"textColor"} mx="m">and</Text>
                     <DatePicker
                       value={to}
                       updateValue={(value: string) => setTo(value)}
@@ -206,7 +206,7 @@ export const WalletTransaction = () => {
               borderRadius={7}
               mt="l"
               mx='m'
-              py={'m'}
+              py={'mm'}
               justifyContent={'center'}
               alignSelf={'flex-end'}
               width={'83%'}

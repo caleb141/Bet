@@ -43,6 +43,7 @@ const theme = createTheme({
     inputBg: palette.white,
     inputFilledBg: palette.muted,
     mainBg: palette.white,
+    switchBg: palette.primary,
     mainBgInv: palette.black,
     textColor: palette.black,
     textColorInv: palette.white,
@@ -55,21 +56,22 @@ const theme = createTheme({
     liveColor: palette.whiteFaint,
     sliderColor: palette.lightGray,
     fundBg: palette.primaryLight,
-     transactionColor:palette.mediumGray,
-     successBg: palette.successLight,
-     dangerBg: palette.dangerLight,
-     overlayBg: palette.lightDark,
-     beneficiaryBg: palette.primaryLight,
+    transactionColor: palette.mediumGray,
+    successBg: palette.successLight,
+    dangerBg: palette.dangerLight,
+    overlayBg: palette.lightDark,
+    beneficiaryBg: palette.primaryLight,
     pickerBg: palette.muted,
     pickerBorder: palette.gray,
     beneficiaryBtn: palette.primaryLight,
     beneficiaryBtnText: palette.primary,
-
   },
   spacing: {
     xxs: 2,
     xs: 4,
     s: 8,
+    md:10,
+    mm:12,
     m: 16,
     l: 24,
     xl: 40,
@@ -77,6 +79,10 @@ const theme = createTheme({
   },
 
   breakpoints: {
+    smallPhone: {
+      width: 360,
+      height: 714,
+    },
     phone: {
       width: 384,
       height: 774,
@@ -134,6 +140,10 @@ const theme = createTheme({
       fontFamily: 'InknutAntiqua-Regular',
       fontSize: RFValue(12),
     },
+    body_x: {
+      fontSize: 10,
+      fontFamily: 'NunitoSans_10pt-Light',
+    },
     body_xs: {
       fontSize: 8,
       fontFamily: 'NunitoSans_10pt-Light',
@@ -152,6 +162,7 @@ export const darkTheme: Theme = {
     inputBg: palette.darkGray,
     inputFilledBg: palette.darkGray,
     mainBg: palette.black,
+    switchBg: palette.black,
     mainBgInv: palette.white,
     textColor: palette.white,
     textColorInv: palette.black,

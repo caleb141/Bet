@@ -11,6 +11,7 @@ const game = require('./images/game.png');
 const liveLogo = require('./images/liveLogo.png');
 const gameImg = require('./images/gameImg.png');
 const profileImg = require('./images/profileImg.png');
+const stars = require('./images/stars.png');
 export {
     onboard1,
     onboard2,
@@ -24,6 +25,7 @@ export {
     game,
     liveLogo,
     gameImg,
-    profileImg
+    profileImg,
+    stars,
 
 }

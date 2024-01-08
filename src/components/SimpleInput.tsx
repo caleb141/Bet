@@ -5,6 +5,7 @@ import {Theme} from '../utils/theme';
 import {isEmpty} from 'lodash';
 import Button from './Button';
 import {usePreference} from '../state/hooks/preference.hook';
+
 import Box from './Box';
 
 type Props = {
@@ -58,7 +59,7 @@ const SimpleInput: FC<Props> = ({
   };
 
   return (
-    <Box style={[styles.subContainer]}>
+    <Box style={[styles.subContainer]} my="xs">
       <TextInput
         onChangeText={onChangeText}
         value={value}

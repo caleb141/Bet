@@ -8,6 +8,7 @@ import { MainScreenNavigationProp, MainStackParamList } from '../utils/rootParam
 import { usePreference } from '../state/hooks/preference.hook';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../utils/theme';
+import { ToggleLightMode } from '../components/ToggleLightMode';
 
 
 const Setting = () => {
@@ -18,26 +19,27 @@ const Setting = () => {
   const {navigate} = useNavigation<MainScreenNavigationProp>();
   return (
     <Box backgroundColor="mainBg" flex={1}>
-      <StatusBar
+      {/* <StatusBar
         backgroundColor={mainBg}
         barStyle={darkMode ? 'light-content' : 'dark-content'}
-      />
+      /> */}
       <ScrollView>
         <Text
-          variant={'h5'}
+          variant={'h4'}
           py={'l'}
-          fontWeight={'700'}
+
           color={'textColor'}
           textAlign={'center'}>
           SETTINGS
         </Text>
-        <SettingsComp text={'My Wallet'} action={()=> navigate('Wallet')}  />
+        <SettingsComp text={'My Wallet'} action={() => navigate('Wallet')} />
         <SettingsComp text={'Game Rules'} />
         <SettingsComp text={'FAQs'} />
         <SettingsComp text={'Support'} />
         <SettingsComp text={'Terms and Conditions'} />
         <SettingsComp text={'Privacy Policy'} />
-        <Text color={'textColor'} mx={'m'} mt="l" mb={"m"} variant={'body_md'}>
+        <ToggleLightMode text={'Light Mode'} />
+        <Text color={'textColor'} mx={'m'} mt="l" mb={'m'} variant={'body_md'}>
           PeerBet will retain a 10% commission of the Total pot by way of game
           fee.
         </Text>
@@ -57,12 +59,7 @@ const Setting = () => {
           Nigeria with registration number 12345 and having a registered address
           at: address things
         </Text>
-        <Text
-          color={'textColor'}
-          mx={'m'}
-
-          fontSize={14}
-          variant={'body_md'}>
+        <Text color={'textColor'} mx={'m'} fontSize={14} variant={'body_md'}>
           PeerBet Limited is licensed and regulated through the Nigerian
           Gambling Commission. License number: 057417-R-333051002
         </Text>

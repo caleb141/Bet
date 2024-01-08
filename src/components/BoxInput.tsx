@@ -16,12 +16,12 @@ type TextInputProp = {
 };
 export const BoxInput = ({value, onChangeText, placeholder}:TextInputProp) => {
   const {colors} = useTheme<Theme>();
-  const {textColor, gray,transactionColor} = colors;
+  const {textColor, gray,inputBg,inputBorder,transactionColor} = colors;
   const styles = StyleSheet.create({
     input: {
       borderStyle: 'solid',
       borderWidth: 1,
-      borderColor: 'textColor',
+      borderColor: 'inputBorder',
       width: widthPercentageToDP('12%'),
       height: heightPercentageToDP('5%'),
       lineHeight: 0,
@@ -38,7 +38,7 @@ export const BoxInput = ({value, onChangeText, placeholder}:TextInputProp) => {
   return (
     <Box>
       <TextInput placeholder='-' placeholderTextColor={textColor}
-        style={[styles.input, {borderColor: gray, color: textColor, }]}
+        style={[styles.input, {borderColor: inputBorder, color: textColor, backgroundColor:inputBg}]}
       />
     </Box>
   );

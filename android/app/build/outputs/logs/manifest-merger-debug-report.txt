@@ -9,6 +9,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.182.0] /Users/macbook
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.182.0] /Users/macbookpro/.gradle/caches/transforms-3/927874504f02e490d8ef5fc541319ddd/transformed/jetified-flipper-fresco-plugin-0.182.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.182.0] /Users/macbookpro/.gradle/caches/transforms-3/e13f88164840fe641a466d05cd8edac7/transformed/jetified-flipper-0.182.0/AndroidManifest.xml:8:1-18:12
 MERGED from [:react-native-async-storage_async-storage] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-community_datetimepicker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-date-picker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-fast-image] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-gesture-handler] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-linear-gradient] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-linear-gradient/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -87,6 +89,8 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/macbookpro/.gradle/ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/be0decce32e871a4b0c6b0b509601ea5/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/3adcfdfbb39880719084168d7663554f/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/8f8cb7fbd9978c41ef281ffd13411d6a/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] /Users/macbookpro/.gradle/caches/transforms-3/97bc6e096de38b087bf3afbd209394ba/transformed/jetified-numberpickerview-v1.1.5/AndroidManifest.xml:2:1-11:12
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/macbookpro/.gradle/caches/transforms-3/7acd965a37b68148fb305fc6291da56c/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/macbookpro/.gradle/caches/transforms-3/6b675b8779f5bce57b5bb10c07a431c5/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/macbookpro/.gradle/caches/transforms-3/ea88610a3c8be13450373fa73372379b/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/macbookpro/Documents/myPersonalProjects/betapp/android/app/src/debug/AndroidManifest.xml:2:1-13:12
@@ -118,6 +122,8 @@ application
 ADDED from /Users/macbookpro/Documents/myPersonalProjects/betapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
 MERGED from /Users/macbookpro/Documents/myPersonalProjects/betapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
 MERGED from /Users/macbookpro/Documents/myPersonalProjects/betapp/android/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [:react-native-community_datetimepicker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-20
+MERGED from [:react-native-community_datetimepicker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-20
 MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/macbookpro/.gradle/caches/transforms-3/7f8a12fa5e11d275ef7433bff5c1ada3/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:10:5-14:19
 MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/macbookpro/.gradle/caches/transforms-3/7f8a12fa5e11d275ef7433bff5c1ada3/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:10:5-14:19
 MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/macbookpro/.gradle/caches/transforms-3/0eaf52f4c642de190d4dd4a67699b7b2/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
@@ -140,6 +146,8 @@ MERGED from [androidx.core:core:1.8.0] /Users/macbookpro/.gradle/caches/transfor
 MERGED from [androidx.core:core:1.8.0] /Users/macbookpro/.gradle/caches/transforms-3/9623e378e4dfc57c47793d0ffd25ee05/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/macbookpro/.gradle/caches/transforms-3/a1eec6f4e1f4253fcf428dd43a9fa3cd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/macbookpro/.gradle/caches/transforms-3/a1eec6f4e1f4253fcf428dd43a9fa3cd/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/macbookpro/.gradle/caches/transforms-3/7acd965a37b68148fb305fc6291da56c/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/macbookpro/.gradle/caches/transforms-3/7acd965a37b68148fb305fc6291da56c/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/macbookpro/.gradle/caches/transforms-3/9623e378e4dfc57c47793d0ffd25ee05/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:label
@@ -202,6 +210,10 @@ MERGED from [com.facebook.flipper:flipper:0.182.0] /Users/macbookpro/.gradle/cac
 MERGED from [com.facebook.flipper:flipper:0.182.0] /Users/macbookpro/.gradle/caches/transforms-3/e13f88164840fe641a466d05cd8edac7/transformed/jetified-flipper-0.182.0/AndroidManifest.xml:11:5-13:41
 MERGED from [:react-native-async-storage_async-storage] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-async-storage_async-storage] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-community_datetimepicker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-community_datetimepicker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-date-picker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-date-picker] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-date-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-fast-image] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-fast-image] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-gesture-handler] /Users/macbookpro/Documents/myPersonalProjects/betapp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
@@ -358,6 +370,10 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/3adcfdfbb39880719084168d7663554f/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/8f8cb7fbd9978c41ef281ffd13411d6a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/macbookpro/.gradle/caches/transforms-3/8f8cb7fbd9978c41ef281ffd13411d6a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] /Users/macbookpro/.gradle/caches/transforms-3/97bc6e096de38b087bf3afbd209394ba/transformed/jetified-numberpickerview-v1.1.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.henninghall:numberpickerview:v1.1.5] /Users/macbookpro/.gradle/caches/transforms-3/97bc6e096de38b087bf3afbd209394ba/transformed/jetified-numberpickerview-v1.1.5/AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/macbookpro/.gradle/caches/transforms-3/7acd965a37b68148fb305fc6291da56c/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.8-2021a] /Users/macbookpro/.gradle/caches/transforms-3/7acd965a37b68148fb305fc6291da56c/transformed/jetified-time4j-android-4.8-2021a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/macbookpro/.gradle/caches/transforms-3/6b675b8779f5bce57b5bb10c07a431c5/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] /Users/macbookpro/.gradle/caches/transforms-3/6b675b8779f5bce57b5bb10c07a431c5/transformed/jetified-fbcore-2.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/macbookpro/.gradle/caches/transforms-3/ea88610a3c8be13450373fa73372379b/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41

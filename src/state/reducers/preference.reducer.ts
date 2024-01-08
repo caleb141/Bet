@@ -8,17 +8,16 @@ type UserState = {
 const slice = createSlice({
   name: 'preferences',
   initialState: {
-    darkMode: true,
+    darkMode: false,
   } as unknown as UserState,
   reducers: {
-    toggleMode: (state, {payload: {mode}}) => {
-      state.darkMode = mode;
+    toggleMode: (state, {payload: {}}) => {
+      state.darkMode = !state.darkMode;
     },
   },
 });
 
-export const {toggleMode} =
-  slice.actions;
+export const {toggleMode} = slice.actions;
 
 export default slice.reducer;
 

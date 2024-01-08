@@ -76,7 +76,7 @@ const Success = () => {
             <Text color="textColor" variant={'body'} fontSize={RFValue(16)}>
             Your password reset wass successful
             </Text>
-           
+
           </Box>
         </Box>
         <Button
@@ -85,11 +85,11 @@ const Success = () => {
           onPress={onSubmit}
           borderRadius={7}
           mb="xl"
-          py={'m'}
+          py={'mm'}
           justifyContent={'center'}
           alignSelf={'center'}
           width={'100%'}
-          label="Back to Login"
+          label="Great, OK"
         />
         <Box
           width={'95%'}
@@ -97,8 +97,8 @@ const Success = () => {
           alignItems={'flex-start'}
           justifyContent={'flex-start'}
           flexDirection={'row'}>
-          <Box mr={'s'}>
-            <MaterialIcon name="error-outline" size={20} color={textColor} />
+          <Box mr={'s'} >
+            <MaterialIcon name="error-outline" size={18} color={textColor} />
           </Box>
           <Box>
             <Text

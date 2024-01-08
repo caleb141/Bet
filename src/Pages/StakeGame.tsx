@@ -10,23 +10,60 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {StakeBal} from '../components/StakeBal';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
-import {heightPercentageToDP} from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from 'react-native-responsive-screen';
 import Select from '../components/Select';
 import SimpleInput from '../components/SimpleInput';
 import {StyleSheet} from 'react-native';
 import Modal from 'react-native-modal';
 import Button from '../components/Button';
+import { useNavigation } from '@react-navigation/native';
+import { MainScreenNavigationProp } from '../utils/rootParams';
 
 type Props = {
   isVisible: boolean;
   close: any;
 };
+type ModalProps = {
+  isVisible: boolean;
+  close: any;
+};
+
+
+export const AddModal = ({isVisible, close}:ModalProps) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleNewModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  return (
+    <Box style={{flex: 1}}>
+      <Button label="Show modal" onPress={toggleNewModal} />
+
+      <Modal isVisible={isModalVisible}>
+        <Box style={{flex: 1}}>
+          <Text>Hello!</Text>
+
+          <Button label="Hide modal" onPress={toggleNewModal} />
+        </Box>
+      </Modal>
+    </Box>
+  );
+}
+
 const AddStack: FC<Props> = ({isVisible, close}) => {
   const {colors} = useTheme<Theme>();
   const [banks, setBanks] = useState([]);
   const [bank, setBank] = useState('');
-  const {overlayBg} = colors;
+  const {overlayBg, black} = colors;
   const addBeneficiary = () => {};
+
+
+
+  const {navigate, goBack} = useNavigation<MainScreenNavigationProp>();
   return (
     <Modal
       style={[styles.bottomModalView, {backgroundColor: overlayBg}]}
@@ -37,26 +74,36 @@ const AddStack: FC<Props> = ({isVisible, close}) => {
       onBackdropPress={close}>
       <Box
         bg="mainBg"
-        height={heightPercentageToDP('40%')}
+        height={heightPercentageToDP('65%')}
         borderTopLeftRadius={20}
         p="m"
+        mt={'m'}
         borderTopRightRadius={20}>
         <Text
-          fontWeight={'700'}
           textAlign={'center'}
           color={'textColor'}
+          variant={'body_md'}
+          pt={"m"}>
+          Hi Captain, Noticed your
+
+        </Text>
+        <Text
+
+          textAlign={'center'}
+          color={'textColor'}
+          py={"xs"}
           variant={'body_md'}>
-          Hi Captain, Noticed your handle (Display name) is still default:
+          handle (Display name) is still default:
         </Text>
         <Text
           fontWeight={'700'}
           textAlign={'center'}
           color={'textColor'}
-          variant={'body_md'}>
+          variant={'subtitle'}>
           (Player123)
         </Text>
 
-        <Box my="l" mx="m">
+        {/* <Box my="l" mx="m">
           <Select
             data={banks}
             value={bank}
@@ -65,16 +112,55 @@ const AddStack: FC<Props> = ({isVisible, close}) => {
             onChangeText={(value: string) => console.log(value)}
             label="Select bank account"
           />
+        </Box> */}
+        <Text color={'textColor'} textAlign={'center'} variant={'body'} mt={"l"}>
+          Do you want to change to your desired name?
+        </Text>
+        <Box
+          flexDirection={'row'}
+          mx={'l'}
+          mt="xl"
+          justifyContent={'space-between'}>
+          <TouchableOpacity>
+            <Box
+              width={widthPercentageToDP('37%')}
+              borderWidth={1}
+              py={'xs'}
+              px={'s'}
+              borderRadius={4}
+              borderColor={'textColor'}
+              bg={'white'}>
+              <Text textAlign={'center'} variant={'body'} color={'black'}>
+                No, Continue with default
+              </Text>
+            </Box>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Box
+              width={widthPercentageToDP('37%')}
+              borderWidth={1}
+              borderColor={'primary'}
+              py={'xs'}
+              px={'m'}
+              borderRadius={4}
+              alignItems={'center'}
+              justifyContent={'center'}
+              bg={'primary'}>
+              <Text textAlign={'center'} variant={'body'} color={'white'}>
+                Yes, change display name
+              </Text>
+            </Box>
+          </TouchableOpacity>
         </Box>
 
-        <Box flexDirection={'row'} pl={'m'}>
+        <Box flexDirection={'row'} pl={'m'} mt={'l'}>
           <Box flex={1} mr="m">
             <SimpleInput
               label="Username"
               value={''}
               onChangeText={() => {}}
               hasError={false}
-              placeholder="Account number"
+              placeholder="Handle (display name)"
             />
           </Box>
         </Box>
@@ -82,24 +168,39 @@ const AddStack: FC<Props> = ({isVisible, close}) => {
         <Button
           accessibilityLabel="button"
           bg="primary"
-          onPress={addBeneficiary}
+          onPress={()=>navigate("StakeConfirmed")}
           borderRadius={7}
-          mt="l"
+          mt="m"
           mx="m"
-          py={'m'}
+          py={'mm'}
           justifyContent={'center'}
           alignSelf={'flex-end'}
           width={'90%'}
-          label="Set the Stack"
+          label="Submit"
         />
+        <Text
+          color={'danger'}
+          variant={'body_md'}
+          mx={'xl'}
+          py={'m'}
+          fontWeight={'700'}>
+          Note: your handle (display name) can only be changed once.
+        </Text>
       </Box>
     </Modal>
   );
 };
+
+
+
+
+
 export const StakeGame = () => {
   const {colors} = useTheme<Theme>();
   const {textColor, inputBorder, inputBg, gray, primary, overlayBg} = colors;
   const [isModalVisible, setModalVisible] = useState(false);
+
+  const {navigate, goBack} = useNavigation<MainScreenNavigationProp>();
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -111,7 +212,7 @@ export const StakeGame = () => {
           close={() => setModalVisible(false)}
         />
         <Box>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goBack}>
             <FontAwesome6Icon
               size={20}
               name="arrow-left-long"
@@ -122,14 +223,14 @@ export const StakeGame = () => {
 
         <Text
           variant={'h4'}
-          fontWeight={'700'}
+
           color={'textColor'}
           textAlign={'center'}
-          py="l">
+          py="m">
           Select Stake
         </Text>
 
-        <Text color={'textColor'} mx={'xxl'} textAlign={'center'}>
+        <Text color={'textColor'} mx={'xl'} pt="m" textAlign={'center'}>
           Captain, you decide the stake each player must put into the pot
         </Text>
         <StakeAmount />

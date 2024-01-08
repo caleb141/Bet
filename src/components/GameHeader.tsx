@@ -4,7 +4,7 @@ import Text from './Text'
 
 export const GameHeader = () => {
   return (
-    <Box alignItems={"center"} my={"m"}>
+    <Box alignItems={"center"} mb={"m"}>
       <Text color={'textColor'} variant={'body'} fontWeight={'700'}>
         {' '}
         Game week 16

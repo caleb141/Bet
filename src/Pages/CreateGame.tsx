@@ -15,17 +15,17 @@ import { MainScreenNavigationProp } from '../utils/rootParams';
 export const CreateGame = () => {
   const {colors} = useTheme<Theme>();
   const {textColor, primary, overlayBg} = colors;
-    const {navigate} = useNavigation<MainScreenNavigationProp>();
+    const {navigate, goBack} = useNavigation<MainScreenNavigationProp>();
   return (
-    <Box px={'m'} backgroundColor="mainBg" pt={'l'} flex={1}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <Box px={'s'} backgroundColor="mainBg" pt={'l'} flex={1}>
+
         <Box
           justifyContent={'center'}
           alignItems={'center'}
           flexDirection={'row'}
-          position={'relative'}>
+          position={'relative'} >
           <Box position={'absolute'} left={0}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goBack}>
               <FontAwesome6Icon
                 size={20}
                 name="arrow-left-long"
@@ -33,21 +33,19 @@ export const CreateGame = () => {
               />
             </TouchableOpacity>
           </Box>
-          <Text
-            variant={'h5'}
-            fontWeight={'700'}
-            color={'textColor'}
-            textAlign={'center'}>
+          <Text variant={'h4'} color={'textColor'} textAlign={'center'}>
             CREATE NEW GAME
           </Text>
         </Box>
-        <GameHeader />
+        <Box pt={'l'}>
+          <GameHeader />
+        </Box>
+
         <Box
-          mt="xs"
           bg={'primary'}
           borderRadius={8}
           justifyContent={'space-between'}
-          height={100}>
+          height={100}  mb={"s"}>
           <Box
             px={'l'}
             flexDirection={'row'}
@@ -82,31 +80,43 @@ export const CreateGame = () => {
           <Box position={'absolute'} right={0}>
             <LiveLogo />
           </Box>
-          <Box></Box>
+
         </Box>
-        <GameWeekHeader title="Predictions" />
-        <InputFixtures />
-        <InputFixtures />
-        <InputFixtures />
-        <InputFixtures />
-        <Text color={'primary'} textAlign={'center'} py={'l'}>
-          You must predict scores for every fixture and place your bet before
-          deadline
-        </Text>
-        <TouchableOpacity onPress={() => {navigate("StakeGame")}}>
-          <Box
-            bg={'gray'}
-            py={'m'}
-            mb={"l"}
-            borderRadius={6}
-            justifyContent={'center'}
-            alignItems={'center'}>
-            <Text variant={'body'} color={'muted'}>
-              Submit Predictions
-            </Text>
+        <ScrollView  showsVerticalScrollIndicator={false}>
+          <Box >
+            <GameWeekHeader title="Predictions" />
           </Box>
-        </TouchableOpacity>
-      </ScrollView>
+
+          <Box mx="s">
+            <InputFixtures />
+            <InputFixtures />
+            <InputFixtures />
+            <InputFixtures />
+          </Box>
+
+          <Text color={'primary'} textAlign={'center'} py={'l'}>
+            You must predict scores for every fixture and place your bet before
+            deadline
+          </Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigate('StakeGame');
+            }}>
+            <Box
+              bg={'gray'}
+              py={'m'}
+              mb={'l'}
+              mx="s"
+              borderRadius={6}
+              justifyContent={'center'}
+              alignItems={'center'}>
+              <Text variant={'body'} color={'muted'}>
+                Submit Predictions
+              </Text>
+            </Box>
+          </TouchableOpacity>
+        </ScrollView>
+
     </Box>
   );
 };

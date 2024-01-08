@@ -8,14 +8,15 @@ import { Theme } from '../utils/theme';
 type SuccessProp ={
     title:any,
     text:any,
+
 }
 export const SuccessComp = ({title, text}:SuccessProp) => {
       const {colors} = useTheme<Theme>();
       const {textColor} = colors;
   return (
-    <Box alignItems={'center'} mx={"m"} my={"l"} justifyContent={'center'}>
+    <Box alignItems={'center'} mx={"m"} mt={"l"} justifyContent={'center'}>
       <Text color={"textColor"} textAlign={"center"} variant={"h4"} fontWeight={"600"}>{title}</Text>
-      <Text color={"textColor"} textAlign={"center"} variant={"body"} py={"l"}>{text}</Text>
+      <Text color={"textColor"} textAlign={"center"} variant={"body"} pt={"l"}>{text}</Text>
     </Box>
   );
 }

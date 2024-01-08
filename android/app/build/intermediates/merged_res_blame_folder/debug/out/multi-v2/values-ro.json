@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reactnativeapp-mergeDebugResources-36:/values-ro/values-ro.xml",
+            "outputFile": "com.reactnativeapp-mergeDebugResources-37:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/transforms-3/9623e378e4dfc57c47793d0ffd25ee05/transformed/core-1.8.0/res/values-ro/values-ro.xml",

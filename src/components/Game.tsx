@@ -9,6 +9,7 @@ import FastImage from 'react-native-fast-image';
 import {game} from '../assets';
 import {liveLogo} from '../assets';
 import LiveLogo from '../assets/svgs/liveLogo.svg';
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 export const Game = () => {
   return (
@@ -22,7 +23,10 @@ export const Game = () => {
         source={game}
         resizeMode={FastImage.resizeMode.cover}
       />
-      <Box bg={'primary'} justifyContent={'space-between'} height={100}>
+      <Box
+        bg={'primary'}
+        justifyContent={'space-between'}
+        height={heightPercentageToDP('10%')}>
         <Box px={'s'}>
           <Text color={'liveColor'}>Live blog</Text>
           <Text color={'white'} variant={'h5'} fontWeight={'700'}>
@@ -30,14 +34,12 @@ export const Game = () => {
           </Text>
         </Box>
 
-        <Box position={'absolute'} right={0}>
-          <LiveLogo />
+        <Box position={'absolute'} right={-28}>
+          <LiveLogo height={heightPercentageToDP('10%')} />
         </Box>
         <Box></Box>
       </Box>
-      <Box>
-
-      </Box>
+      <Box></Box>
     </Box>
   );
 };

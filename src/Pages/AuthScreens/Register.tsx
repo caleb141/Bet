@@ -195,13 +195,13 @@ const Register = () => {
               }) => (
                 <Box mt="xl">
                   <Text
-                    mb={'xl'}
+                    mb={'m'}
                     color={'primary'}
                     textAlign={'center'}
                     variant={'h4'}>
                     Register
                   </Text>
-                  <Box mb="s">
+                  <Box>
                     <FlaotingTextInput
                       label="Full name"
                       value={values.fullName}
@@ -210,70 +210,76 @@ const Register = () => {
                       placeholder="Full name (Firstname Lastname)"
                     />
                     {errors.fullName && touched.fullName ? (
-                      <Text color="danger" variant={'body_sm'} my={'s'}>
+                      <Text color="danger" variant={'body_sm'} pt={'xxs'}>
                         {errors.fullName}
                       </Text>
                     ) : null}
                   </Box>
-                  <Box mb="m" flexDirection={'row'} gap={'s'}>
-                    <Box flex={1}>
-                      <Select
-                        data={days}
-                        value={values.day}
-                        handleBlur={handleBlur('day')}
-                        hasError={!isEmpty(errors.day) && touched.day}
-                        onChangeText={value => {
-                          setFieldValue('day', value);
-                          handleChange('day');
-                        }}
-                        label="Day"
-                      />
-                      {errors.day && touched.day ? (
-                        <Text color="danger" variant={'body_sm'} my={'s'}>
-                          {errors.day}
-                        </Text>
-                      ) : null}
-                    </Box>
-                    <Box flex={1}>
-                      <Select
-                        data={months}
-                        value={values.month}
-                        handleBlur={handleBlur('month')}
-                        hasError={!isEmpty(errors.month) && touched.month}
-                        onChangeText={value => {
-                          setMonth(value);
-                          setFieldValue('month', value);
-                          handleChange('month');
-                        }}
-                        label="Month"
-                      />
-                      {errors.month && touched.month ? (
-                        <Text color="danger" variant={'body_sm'} my={'s'}>
-                          {errors.month}
-                        </Text>
-                      ) : null}
-                    </Box>
-                    <Box flex={1}>
-                      <Select
-                        data={years}
-                        value={values.year}
-                        handleBlur={handleBlur('year')}
-                        hasError={!isEmpty(errors.year) && touched.year}
-                        onChangeText={value => {
-                          setYear(value);
-                          setFieldValue('year', value);
-                          handleChange('year');
-                        }}
-                        label="Year"
-                      />
-                      {errors.year && touched.year ? (
-                        <Text color="danger" variant={'body_sm'} my={'s'}>
-                          {errors.year}
-                        </Text>
-                      ) : null}
+                  <Box>
+                    <Text py="s" variant={'body_md'} color="textColor">
+                      Date of birth
+                    </Text>
+                    <Box mb="m" flexDirection={'row'} mr="xl" gap={'s'}>
+                      <Box flex={1}>
+                        <Select
+                          data={days}
+                          value={values.day}
+                          handleBlur={handleBlur('day')}
+                          hasError={!isEmpty(errors.day) && touched.day}
+                          onChangeText={value => {
+                            setFieldValue('day', value);
+                            handleChange('day');
+                          }}
+                          label="Day"
+                        />
+                        {errors.day && touched.day ? (
+                          <Text color="danger" variant={'body_sm'} my={'s'}>
+                            {errors.day}
+                          </Text>
+                        ) : null}
+                      </Box>
+                      <Box flex={1}>
+                        <Select
+                          data={months}
+                          value={values.month}
+                          handleBlur={handleBlur('month')}
+                          hasError={!isEmpty(errors.month) && touched.month}
+                          onChangeText={value => {
+                            setMonth(value);
+                            setFieldValue('month', value);
+                            handleChange('month');
+                          }}
+                          label="Month"
+                        />
+                        {errors.month && touched.month ? (
+                          <Text color="danger" variant={'body_sm'} my={'s'}>
+                            {errors.month}
+                          </Text>
+                        ) : null}
+                      </Box>
+                      <Box flex={1}>
+                        <Select
+                          data={years}
+                          value={values.year}
+                          handleBlur={handleBlur('year')}
+                          hasError={!isEmpty(errors.year) && touched.year}
+                          onChangeText={value => {
+                            setYear(value);
+                            setFieldValue('year', value);
+                            handleChange('year');
+                          }}
+                          label="Year"
+                        />
+                        {errors.year && touched.year ? (
+                          <Text color="danger" variant={'body_sm'} my={'s'}>
+                            {errors.year}
+                          </Text>
+                        ) : null}
+                      </Box>
                     </Box>
                   </Box>
-                  <Box mb="s">
+
+                  <Box mb="m">
                     <FlaotingTextInput
                       label="Phone number"
                       value={values.phoneNumber}
@@ -289,7 +295,7 @@ const Register = () => {
                       </Text>
                     ) : null}
                   </Box>
-                  <Box mb="s">
+                  <Box mb="m">
                     <FlaotingTextInput
                       label="Email"
                       value={values.email}
@@ -354,15 +360,15 @@ const Register = () => {
                       <Box />
                     )}
                   </Box>
-                  <Box alignItems={'flex-end'}>
+                  {/* <Box alignItems={'flex-end'}>
                     <Text pl="s" variant={'body_md'} color="textColor">
                       Reset Password?
                     </Text>
-                  </Box>
+                  </Box> */}
 
-                  <Box flexDirection={'row'}>
+                  <Box flexDirection={'row'} mt="l" >
                     <BouncyCheckbox
-                      size={25}
+                      size={20}
                       fillColor={primary}
                       unfillColor={inputBg}
                       style={{
@@ -405,7 +411,7 @@ const Register = () => {
                     isLoading={loading}
                     onPress={handleSubmit}
                     borderRadius={7}
-                    mt="l"
+                    mt="m"
                     py={'m'}
                     justifyContent={'center'}
                     alignSelf={'center'}
@@ -419,7 +425,7 @@ const Register = () => {
             <Box
               flexDirection="row"
               justifyContent="center"
-              py={'m'}
+              py={'l'}
               alignItems="center">
               <Text
                 color="textColor"
@@ -428,7 +434,7 @@ const Register = () => {
                 Already have an account?
               </Text>
               <Button
-                ml="s"
+                ml="xs"
                 variant="link"
                 bg={'transparent'}
                 color={'primary'}

@@ -1,5 +1,5 @@
 //@ts-ignore
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Animated,
@@ -12,20 +12,20 @@ import PagerView, {
   PagerViewOnPageScrollEventData,
 } from 'react-native-pager-view';
 
-import { ExpandingDot } from 'react-native-animated-pagination-dots';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { heightPercentageToDP } from 'react-native-responsive-screen';
-import { RFValue } from 'react-native-responsive-fontsize';
-import { RootStackParamList } from '../utils/rootParams';
-import { onboard1, onboard2 } from '../assets';
+import {ExpandingDot} from 'react-native-animated-pagination-dots';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {heightPercentageToDP} from 'react-native-responsive-screen';
+import {RFValue} from 'react-native-responsive-fontsize';
+import {RootStackParamList} from '../utils/rootParams';
+import {onboard1, onboard2} from '../assets';
 import Box from '../components/Box';
-import { Phone } from 'lucide-react-native';
+import {Phone} from 'lucide-react-native';
 import Text from '../components/Text';
 import Button from '../components/Button';
 import LinearGradient from 'react-native-linear-gradient';
-import { color, useTheme } from '@shopify/restyle';
-import theme, { Theme } from '../utils/theme';
+import {color, useTheme} from '@shopify/restyle';
+import theme, {Theme} from '../utils/theme';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -55,10 +55,10 @@ export default function GetStarted() {
   const positionAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const inputRange = [0, INTRO_DATA.length];
   const [page, setPage] = useState<number>(0);
-  const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const { colors } = useTheme<Theme>()
-  const { primary, gray } = colors;
-  const { height, width } = useWindowDimensions();
+  const {navigate} = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const {colors} = useTheme<Theme>();
+  const {primary, gray} = colors;
+  const {height, width} = useWindowDimensions();
   console.log(height, 'height');
   console.log(width, 'width');
   const scrollX = Animated.add(
@@ -89,38 +89,45 @@ export default function GetStarted() {
   );
 
   return (
-    <Box flex={1} height={'100%'} bg='white'>
-      <StatusBar backgroundColor='#2A52BE' />
-
+    <Box flex={1} height={'100%'} bg="white">
+      <StatusBar backgroundColor="#2A52BE" />
 
       <Box alignItems={'center'} position="relative">
         <Image
           source={onboard2}
           style={{
             height: Platform.OS === 'ios' ? '95%' : heightPercentageToDP('80%'),
-            width: '100%'
+            width: '100%',
           }}
           alt="onboarding image"
           resizeMode={'cover'}
-        // removeClippedSubviews={false}
+          // removeClippedSubviews={false}
         />
-
       </Box>
 
-
-      <Box bg='transparent' position={'absolute'} width={'100%'} bottom={0} pt={'s'} height={'63%'} >
-        <LinearGradient style={{ flex: 1 }} colors={['#FFFFFF00', '#FFFFFF',  '#FFFFFF','#FFFFFF']}>
-          <Box flex={1} 
-          bottom={{ 
-            phone: -35,
-            longPhone: -55
-           }} justifyContent={'center'}>
+      <Box
+        bg="transparent"
+        position={'absolute'}
+        width={'100%'}
+        bottom={0}
+        pt={'s'}
+        height={'63%'}>
+        <LinearGradient
+          style={{flex: 1}}
+          colors={['#FFFFFF00', '#FFFFFF', '#FFFFFF', '#FFFFFF']}>
+          <Box
+            flex={1}
+            bottom={{
+              smallPhone: -30,
+              phone: -35,
+              longPhone: -55,
+            }}
+            justifyContent={'center'}>
             <Box
               alignItems={'center'}
               justifyContent={'center'}
               // zIndex={10}
               alignSelf={'center'}
-              
               // position="absolute"
               // bottom={{
               //   base: 16,
@@ -128,22 +135,33 @@ export default function GetStarted() {
               // }}
               // minHeight={60}
               width={{
+                smallPhone: '65%',
                 phone: '65%',
-                longPhone: '85%'
+                longPhone: '85%',
               }}>
               <Text
-
                 accessibilityLabel={`title${page}`}
                 variant={'title'}
                 textAlign="center"
                 color="textBlack">
-                <Text variant={'title'} color={'primary'}>Cash out</Text> on your <Text variant={'title'} color={'primary'}>Knowledge</Text> of the <Text variant={'title'} color={'primary'}>game</Text>
+                <Text variant={'title'} color={'primary'}>
+                  Cash out
+                </Text>{' '}
+                on your{' '}
+                <Text variant={'title'} color={'primary'}>
+                  Knowledge
+                </Text>{' '}
+                of the{' '}
+                <Text variant={'title'} color={'primary'}>
+                  game!
+                </Text>
               </Text>
-              <Box width={{
-                phone: '83%',
-                longPhone: '75%'
-              }}>
-
+              <Box
+                width={{
+                  smallPhone: '95%',
+                  phone: '83%',
+                  longPhone: '75%',
+                }}>
                 <Text
                   accessibilityLabel={`description${page}`}
                   textAlign={'center'}
@@ -155,8 +173,7 @@ export default function GetStarted() {
               </Box>
             </Box>
 
-            <Box   >
-
+            <Box>
               <Button
                 accessibilityLabel="button"
                 bg="primary"
@@ -169,9 +186,8 @@ export default function GetStarted() {
                 justifyContent={'center'}
                 alignSelf={'center'}
                 width={'85%'}
-                label='Get Started'
+                label="Get Started"
               />
-
 
               <ExpandingDot
                 data={INTRO_DATA}
@@ -191,15 +207,12 @@ export default function GetStarted() {
                   marginHorizontal: 3,
                   borderRadius: 6,
                 }}
-
                 containerStyle={{
                   bottom: -25,
                 }}
               />
             </Box>
           </Box>
-
-
         </LinearGradient>
       </Box>
     </Box>
@@ -218,7 +231,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
   },
-  progressContainer: { flex: 0.1, backgroundColor: '#63a4ff' },
+  progressContainer: {flex: 0.1, backgroundColor: '#63a4ff'},
   center: {
     justifyContent: 'center',
     alignItems: 'center',

@@ -1,5 +1,5 @@
 //@ts-ignore
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Animated,
@@ -12,20 +12,20 @@ import PagerView, {
   PagerViewOnPageScrollEventData,
 } from 'react-native-pager-view';
 
-import { ExpandingDot } from 'react-native-animated-pagination-dots';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { heightPercentageToDP } from 'react-native-responsive-screen';
-import { RFValue } from 'react-native-responsive-fontsize';
-import { RootStackParamList } from '../utils/rootParams';
-import { onboard1, onboard2 } from '../assets';
+import {ExpandingDot} from 'react-native-animated-pagination-dots';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {heightPercentageToDP} from 'react-native-responsive-screen';
+import {RFValue} from 'react-native-responsive-fontsize';
+import {RootStackParamList} from '../utils/rootParams';
+import {onboard1, onboard2} from '../assets';
 import Box from '../components/Box';
-import { Phone } from 'lucide-react-native';
+import {Phone} from 'lucide-react-native';
 import Text from '../components/Text';
 import Button from '../components/Button';
 import LinearGradient from 'react-native-linear-gradient';
-import { color, useTheme } from '@shopify/restyle';
-import theme, { Theme } from '../utils/theme';
+import {color, useTheme} from '@shopify/restyle';
+import theme, {Theme} from '../utils/theme';
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -55,10 +55,10 @@ export default function OnBoarding() {
   const positionAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const inputRange = [0, INTRO_DATA.length];
   const [page, setPage] = useState<number>(0);
-  const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>();
-  const {colors} = useTheme<Theme>()
-  const {primary,gray} = colors;
-  const { height, width } = useWindowDimensions();
+  const {navigate} = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const {colors} = useTheme<Theme>();
+  const {primary, gray} = colors;
+  const {height, width} = useWindowDimensions();
   console.log(height, 'height');
   console.log(width, 'width');
   const scrollX = Animated.add(
@@ -89,32 +89,34 @@ export default function OnBoarding() {
   );
 
   return (
-    <Box flex={1} height={'100%'} bg='white'>
-      <StatusBar backgroundColor='#2A52BE' barStyle={'light-content'}  />
-
+    <Box flex={1} height={'100%'} bg="white">
+      <StatusBar backgroundColor="#2A52BE" barStyle={'light-content'} />
 
       <Box alignItems={'center'} position="relative">
         <Image
           source={onboard1}
           style={{
             height: Platform.OS === 'ios' ? '95%' : heightPercentageToDP('80%'),
-            width: '100%'
+            width: '100%',
           }}
           alt="onboarding image"
           resizeMode={'cover'}
-        // removeClippedSubviews={false}
+          // removeClippedSubviews={false}
         />
-
       </Box>
 
-
-      <Box bg='transparent' position={'absolute'} width={'100%'} bottom={0} pt={'s'} height={'45%'} >
-        <LinearGradient style={{ flex: 1 }} colors={['#FFFFFF00', '#FFFFFF', '#FFFFFF']}>
+      <Box
+        bg="transparent"
+        position={'absolute'}
+        width={'100%'}
+        bottom={0}
+        pt={'s'}
+        height={'45%'}>
+        <LinearGradient
+          style={{flex: 1}}
+          colors={['#FFFFFF00', '#FFFFFF', '#FFFFFF']}>
           <Box flex={1} justifyContent={'center'}>
             <Box>
-
-
-
               <Box
                 alignItems={'center'}
                 justifyContent={'center'}
@@ -127,35 +129,47 @@ export default function OnBoarding() {
                 // }}
                 // minHeight={60}
                 width={{
+                  smallPhone: '75%',
                   phone: '75%',
-                  longPhone: '95%'
+                  longPhone: '95%',
                 }}>
                 <Text
-
                   accessibilityLabel={`title${page}`}
                   variant={'title'}
                   textAlign="center"
                   color="textBlack">
-                  <Text variant={'title'} color={'primary'}>Connect</Text> with <Text variant={'title'} color={'primary'}>friends</Text> and become the <Text variant={'title'} color={'primary'}>Champ!</Text>
+                  <Text variant={'title'} color={'primary'}>
+                    Connect
+                  </Text>{' '}
+                  with{' '}
+                  <Text variant={'title'} color={'primary'}>
+                    friends
+                  </Text>{' '}
+                  and become the{' '}
+                  <Text variant={'title'} color={'primary'}>
+                    Champ
+                  </Text>
+                  !
                 </Text>
-                <Box width={{
-                  phone: '83%',
-                  longPhone: '75%'
-                }}>
-
+                <Box
+                  width={{
+                    smallPhone: '77%',
+                    phone: '83%',
+                    longPhone: '75%',
+                  }}>
                   <Text
                     accessibilityLabel={`description${page}`}
                     textAlign={'center'}
                     variant={'body_md'}
-                    my={'m'}
+                    mt={'l'}
                     color="textBlack">
-                    Create weekly games and invite your friends to join your stake
+                    Create weekly games and invite your friends to join your
+                    stake
                   </Text>
                 </Box>
               </Box>
             </Box>
-            <Box >
-
+            <Box>
               {/* <Button
                 accessibilityLabel="button"
                 bg="primary"
@@ -170,7 +184,6 @@ export default function OnBoarding() {
                 label='Get Started'
               /> */}
 
-
               <ExpandingDot
                 data={INTRO_DATA}
                 expandingDotWidth={width / 12}
@@ -179,9 +192,9 @@ export default function OnBoarding() {
                 scrollX={scrollX}
                 inActiveDotOpacity={0.6}
                 inActiveDotColor={gray}
-                activeDotStyle={{ 
+                activeDotStyle={{
                   width: width / 12,
-                 }}
+                }}
                 activeDotColor={primary}
                 dotStyle={{
                   width: width / 20,
@@ -189,15 +202,12 @@ export default function OnBoarding() {
                   marginHorizontal: 3,
                   borderRadius: 6,
                 }}
-                
                 containerStyle={{
                   top: 35,
                 }}
               />
             </Box>
           </Box>
-
-
         </LinearGradient>
       </Box>
     </Box>
@@ -216,7 +226,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
   },
-  progressContainer: { flex: 0.1, backgroundColor: '#63a4ff' },
+  progressContainer: {flex: 0.1, backgroundColor: '#63a4ff'},
   center: {
     justifyContent: 'center',
     alignItems: 'center',

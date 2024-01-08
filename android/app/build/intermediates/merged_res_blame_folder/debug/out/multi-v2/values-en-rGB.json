@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.reactnativeapp-mergeDebugResources-36:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.reactnativeapp-mergeDebugResources-37:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/transforms-3/dd33cdba76574cd6269c5bd29e434651/transformed/material-1.9.0/res/values-en-rGB/values-en-rGB.xml",

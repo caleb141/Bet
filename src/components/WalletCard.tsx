@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from './Box';
 import Text from './Text';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -10,11 +10,24 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import {MainScreenNavigationProp} from '../utils/rootParams';
-
+import Clipboard from '@react-native-clipboard/clipboard';
 
 export const WalletCard = () => {
   const {colors} = useTheme<Theme>();
   const {textColor} = colors;
+  const accountDetails = {
+    Name: 'Account number',
+    AccountNumber: '0212330298',
+    BankName: 'Wema Bank',
+  };
+  const [closeBal, setCloseBal]= useState(false)
+  const [copiedText, setCopiedText] = useState(accountDetails);
+  const copyToClipboard = (data: any) => {
+    const jsonString = JSON.stringify(data);
+    Clipboard.setString(jsonString);
+    console.log(jsonString, 'Successfully copied');
+    // Clipboard.setStrings("hello world")
+  };
   const {navigate} = useNavigation<MainScreenNavigationProp>();
   return (
     <Box mx={'m'}>
@@ -33,16 +46,12 @@ export const WalletCard = () => {
             </TouchableOpacity>
           </Box>
           <Box>
-            <Text
-              mb={'s'}
-              variant={'h3'}
-              color={'textColor'}
-              fontWeight={'700'}>
+            <Text mb={'s'} variant={'h3'} color={'textColor'}>
               ₦5,000
             </Text>
             <Button
               onPress={() => navigate('Withdrawal')}
-              width={'70%'}
+              width={'75%'}
               fontSize={14}
               py={'xs'}
               borderRadius={5}
@@ -53,19 +62,25 @@ export const WalletCard = () => {
           </Box>
         </Box>
         <Box alignItems={'flex-end'}>
-          <TouchableOpacity>
-            <Ionicons size={24} name="eye-off-outline" color={textColor} />
-          </TouchableOpacity>
+          {closeBal ? (
+            <TouchableOpacity onPress={() => setCloseBal(false)}>
+              <Ionicons size={24} name="eye-outline" color={textColor} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => setCloseBal(true)}>
+              <Ionicons size={24} name="eye-off-outline" color={textColor} />
+            </TouchableOpacity>
+          )}
           <Box mt={'l'}>
             <Text variant={'body_sm'} color={'textColor'}>
-              Account number
+              {accountDetails.Name}
             </Text>
 
             <Box flexDirection={'row'} alignItems={'center'}>
               <Text color={'textColor'} mr={'xs'} variant={'body_sm'}>
-                0212330298
+                {accountDetails.AccountNumber}
               </Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => copyToClipboard(accountDetails)}>
                 <MaterialCommunityIcons
                   size={14}
                   name="content-copy"
@@ -74,7 +89,7 @@ export const WalletCard = () => {
               </TouchableOpacity>
             </Box>
             <Text variant={'body_sm'} color="textColor">
-              Wema Bank
+              {accountDetails.BankName}
             </Text>
           </Box>
         </Box>

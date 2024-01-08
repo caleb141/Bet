@@ -10,9 +10,9 @@ import { widthPercentageToDP } from 'react-native-responsive-screen';
 
 export const GameCard = () => {
   return (
-    <ScrollView horizontal={true}>
-      <Box width={'98%'} my={'l'} gap={'s'}  flexDirection={'row'}>
-        <Box width={widthPercentageToDP("24%")}>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <Box width={'98%'} my={'xl'} gap={'s'} flexDirection={'row'}>
+        <Box width={widthPercentageToDP('24%')}>
           <FastImage
             style={{width: '100%', height: 80}}
             // source={{
@@ -27,7 +27,33 @@ export const GameCard = () => {
           </Text>
         </Box>
 
-        <Box width={widthPercentageToDP("24%")} >
+        <Box width={widthPercentageToDP('24%')}>
+          <Box flexDirection={'row'}>
+            <FastImage
+              style={{width: '50%', height: 80}}
+              // source={{
+              //   uri: '/src/assets/images/logo1.png',
+              //   priority: FastImage.priority.normal,
+              // }}
+              source={gameImg}
+              resizeMode={FastImage.resizeMode.cover}
+            />
+            <FastImage
+              style={{width: '50%', height: 80}}
+              // source={{
+              //   uri: '/src/assets/images/logo1.png',
+              //   priority: FastImage.priority.normal,
+              // }}
+              source={gameImg}
+              resizeMode={FastImage.resizeMode.cover}
+            />
+          </Box>
+
+          <Text mx={'xs'} variant={'body_sm'} mt={'xs'} color={'textColor'}>
+            Salah and Son has done it again
+          </Text>
+        </Box>
+        <Box width={widthPercentageToDP('24%')}>
           <FastImage
             style={{width: '100%', height: 80}}
             // source={{
@@ -41,7 +67,7 @@ export const GameCard = () => {
             Salah and Son has done it again
           </Text>
         </Box>
-        <Box width={widthPercentageToDP("24%")} >
+        <Box width={widthPercentageToDP('24%')}>
           <FastImage
             style={{width: '100%', height: 80}}
             // source={{
@@ -51,21 +77,12 @@ export const GameCard = () => {
             source={gameImg}
             resizeMode={FastImage.resizeMode.cover}
           />
-          <Text mx={'xs'} variant={'body_sm'} mt={'xs'} color={'textColor'}>
-            Salah and Son has done it again
-          </Text>
-        </Box>
-        <Box width={widthPercentageToDP("24%")} >
-          <FastImage
-            style={{width: '100%', height: 80}}
-            // source={{
-            //   uri: '/src/assets/images/logo1.png',
-            //   priority: FastImage.priority.normal,
-            // }}
-            source={gameImg}
-            resizeMode={FastImage.resizeMode.cover}
-          />
-          <Text numberOfLines={3} mx={'xs'} variant={'body_sm'} mt={'xs'} color={'textColor'}>
+          <Text
+            numberOfLines={3}
+            mx={'xs'}
+            variant={'body_sm'}
+            mt={'xs'}
+            color={'textColor'}>
             Salah and Son has done it again
           </Text>
         </Box>

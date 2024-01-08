@@ -8,8 +8,11 @@ import Avatar from '../assets/svgs/user.svg';
 import {logo2} from '../assets';
 import {TouchableOpacity} from 'react-native';
 import Button from './Button';
+import { useNavigation } from '@react-navigation/native';
+import { MainScreenNavigationProp } from '../utils/rootParams';
 
 export const Invitation = () => {
+  const {navigate} = useNavigation<MainScreenNavigationProp>();
   return (
     <Box
       flexDirection={'row'}
@@ -40,6 +43,7 @@ export const Invitation = () => {
           ₦10,000
         </Text>
         <Button
+        onPress={()=>navigate("JoinGame")}
           label="Join"
           fontSize={12}
           bg={'primary'}

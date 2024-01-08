@@ -12,9 +12,9 @@ const Wallet = () => {
   return (
     <Box backgroundColor="mainBg" flex={1}>
       <Text
-        variant={'h5'}
+        variant={'h4'}
         py={'l'}
-        fontWeight={'700'}
+
         color={'textColor'}
         textAlign={'center'}>
         MY WALLET

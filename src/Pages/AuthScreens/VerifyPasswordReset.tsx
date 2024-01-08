@@ -26,6 +26,10 @@ import {useTheme} from '@shopify/restyle';
 import {Theme} from '../../utils/theme';
 import OTPTextView from 'react-native-otp-textinput';
 
+import {useHeaderHeight} from '@react-navigation/elements';
+
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+
 const VerifyPasswordReset = () => {
   const [email, setEmail] = useState('');
   const {height, width} = useWindowDimensions();
@@ -38,6 +42,9 @@ const VerifyPasswordReset = () => {
   const {darkMode} = usePreference();
   const {colors} = useTheme<Theme>();
   const {textColor, inputBorder, inputBg, primary} = colors;
+
+  const headerHeight = useHeaderHeight();
+  const insets = useSafeAreaInsets();
 
   const {navigate, goBack} = useNavigation<MainScreenNavigationProp>();
 
@@ -52,22 +59,23 @@ const VerifyPasswordReset = () => {
   }, [darkMode]);
 
   return (
-    <Box px={'m'} py="xl" flex={1} bg={'mainBg'} position="relative">
-      <StatusBar backgroundColor="#2A52BE" barStyle={'light-content'} />
-      <TouchableWithoutFeedback onPress={goBack}>
-        <Box mr={'m'}>
-          <Back />
-        </Box>
-      </TouchableWithoutFeedback>
+    <KeyboardAvoidingView
+      keyboardVerticalOffset={insets.top + headerHeight}
+      {...(Platform.OS === 'ios' && {behavior: 'padding'})}
+      // behavior="padding"
+      style={{
+        //   backgroundColor: 'red',
+        flex: 1,
+        // marginBottom: 45,
+      }}>
+      <Box px={'m'} py="xl" flex={1} bg={'mainBg'} position="relative">
+        <StatusBar backgroundColor="#2A52BE" barStyle={'light-content'} />
+        <TouchableWithoutFeedback onPress={goBack}>
+          <Box mr={'m'}>
+            <Back />
+          </Box>
+        </TouchableWithoutFeedback>
 
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{
-          //   backgroundColor: 'red',
-          flex: 1,
-          marginTop: 20,
-          marginBottom: 45,
-        }}>
         <Text mb={'xl'} color={'primary'} textAlign={'center'} variant={'h4'}>
           Reset your password
         </Text>
@@ -91,20 +99,20 @@ const VerifyPasswordReset = () => {
           </Text>
         </Box>
         <Box
-           width={{
+          width={{
             phone: '80%',
             longPhone: '85%',
           }}
           my="xl"
           alignItems={'center'}
-          ml='m'
-          // alignSelf={'center'}
+          ml="m"
+          alignItems={'flex-start'}
           justifyContent={'flex-start'}
           flexDirection={'row'}>
           <Box mr={'s'}>
-            <MaterialIcon name="error-outline" size={20} color={textColor} />
+            <MaterialIcon name="error-outline" size={18} color={textColor} />
           </Box>
-          <Box>
+          <Box mr="l">
             <Text color={'textColor'} fontSize={12} variant={'body_sm'}>
               Also remember to check your spam if you don’t find the mail in
               your inbox
@@ -178,7 +186,7 @@ const VerifyPasswordReset = () => {
           onPress={onSubmit}
           borderRadius={7}
           mt="l"
-          py={'m'}
+          py={'mm'}
           justifyContent={'center'}
           alignSelf={'center'}
           width={'100%'}
@@ -186,12 +194,12 @@ const VerifyPasswordReset = () => {
         />
         <Box
           width={'95%'}
-          mt='xl'
+          mt="xl"
           alignItems={'flex-start'}
           justifyContent={'flex-start'}
           flexDirection={'row'}>
-          <Box mr={'s'}>
-            <MaterialIcon name="error-outline" size={20} color={textColor} />
+          <Box mr={'s'} >
+            <MaterialIcon name="error-outline" size={18} color={textColor} />
           </Box>
           <Box>
             <Text
@@ -215,8 +223,8 @@ const VerifyPasswordReset = () => {
             </Text>
           </Box>
         </Box>
-      </KeyboardAvoidingView>
-    </Box>
+      </Box>
+    </KeyboardAvoidingView>
   );
 };
 
